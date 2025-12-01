@@ -4,7 +4,7 @@
 
 #include "..\..\script_component.hpp"
 
-["name", "BRLF Advanced"] call _fnc_saveToTemplate;
+["name", "BRLF"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\BRLF\flag_brlf.paa)] call _fnc_saveToTemplate;
