@@ -1,46 +1,85 @@
 ["attributesVehicles", [
+    ["I_SDV_01_F", ["rebCost", 3000]],
+    ["I_Boat_Armed_01_minigun_F", ["rebCost", 5000]],
+    ["O_Boat_Armed_01_hmg_F", ["rebCost", 4000]],
+    ["a3a_C_Heli_Transport_02_F", ["rebCost", 8000]],
+    ["a3a_C_Heli_Light_02_blue_F", ["rebCost", 6500]],
+    //WS
+    ["I_C_Offroad_02_LMG_F", ["rebCost", 500]],
+    ["I_G_Offroad_01_armor_base_lxWS", ["rebCost", 500]],
+    ["I_G_Offroad_01_armor_armed_lxWS", ["rebCost", 1100]],
+    ["I_G_Offroad_01_armor_AT_lxWS", ["rebCost", 1500]],
 
-    // Weak AA vehicles. Leave threat because they're still dangerous in rebel hands
-    ["CUP_B_nM1097_AVENGER_USA_DES", ["cost", 70]],
-    ["CUP_B_nM1097_AVENGER_USA_WDL", ["cost", 70]],
-    ["CUP_B_M163_Vulcan_USA", ["cost", 100]],
-    ["CUP_I_M163_Vulcan_RACS", ["cost", 100]],
+    ///apex
+    ["I_C_Offroad_02_unarmed_F", ["rebCost", 150]],
+    ["I_C_Offroad_02_AT_F", ["rebCost", 1200]],
+    //RF
+    ["I_G_Pickup_rf", ["rebCost", 400]],
+    ["a3u_black_Pickup_mmg_alt_rf", ["rebCost", 700]],
+    ["a3u_black_Pickup_mmg_frame_rf", ["rebCost", 700]],
+    ["I_G_Pickup_hmg_rf", ["rebCost", 600]],
+    ///gm
+    ["gm_pl_army_ural4320_cargo", ["rebCost", 350]],
+    ["gm_dk_army_u1300l_container", ["rebCost", 400]],
+    ["gm_ge_army_kat1_451_cargo", ["rebCost", 500]],
+    ["gm_ge_army_k125", ["rebCost", 100]],
+    ["gm_xx_civ_bicycle_01", ["rebCost", 50]],
+    ["gm_ge_dbp_bicycle_01_ylw", ["rebCost", 50]],
+    //csla
+    ["CSLA_F813", ["rebCost", 600]],
+    ["CSLA_F813o", ["rebCost", 600]],
+    ["CSLA_CIV_JARA250", ["rebCost", 100]],
+    ["US85_TT650", ["rebCost", 100]],
 
-    // IFVs with bonus armour
-    ["CUP_B_FV510_GB_D_SLAT", ["cost", 170]],
-    ["CUP_B_FV510_GB_W_SLAT", ["cost", 170]],
-    ["CUP_B_MCV80_GB_D_SLAT", ["cost", 170]],
-    ["CUP_B_MCV80_GB_W_SLAT", ["cost", 170]],
-    ["CUP_B_M2A3Bradley_USA_D", ["cost", 180], ["threat", 230]],
-    ["CUP_B_M2A3Bradley_USA_W", ["cost", 180], ["threat", 230]],        // also has TOW
+    //vn
+    ["vn_o_air_mig19_gun", ["rebCost", 999999]],
+	
+    ["vn_i_static_m60_high", ["rebCost", 300]],//7.62 static
+	//Civ Cars
+    ["vn_c_car_01_01", ["rebCost", 150]], //No Cargo, 4 Seats, 121 speed
+    ["vn_c_car_03_01", ["rebCost", 150]], //No Cargo 4 Seats 130 speed
+    ["vn_c_car_04_01", ["rebCost", 250]], //no Cargo, 6 Seats 101 speed
+    ["vn_c_wheeled_m151_01", ["rebCost", 100]], //no Cargo, 3 Seats 105 speed
+	["vn_c_wheeled_m151_02", ["rebCost", 100]],
 
-    // BMPs a bit better than APC but not Bradley level
-    ["CUP_O_BMP3_RU", ["cost", 120], ["threat", 150]],
-    ["CUP_O_BMP2_RU", ["cost", 120], ["threat", 150]],
-    ["CUP_O_BMP2_SLA", ["cost", 120], ["threat", 150]],
-    ["CUP_O_BMP2_TKA", ["cost", 120], ["threat", 150]],
-    ["CUP_B_BMP2_CZ", ["cost", 120], ["threat", 150]],
-    ["CUP_B_BMP2_CZ_Des", ["cost", 120], ["threat", 150]],
-    ["CUP_B_BMP2_CDF", ["cost", 120], ["threat", 150]],
+    //statics
+    ["vn_b_army_static_m2_scoped_high", ["rebCost", 600]], //scoped hmg, 8x scope
+    ["vn_i_static_m101_01", ["rebCost", 1500]], //105mm Anti-tank gun, big
+    ["vn_i_static_mortar_m29", ["rebCost", 1000]], //81mm mortar
 
-    // This one is quite strong by light-armed standards
-    ["CUP_O_GAZ_Vodnik_BPPU_RU", ["cost", 75], ["threat", 120]],
 
-    // Tank destroyer strykers, not tough
-    ["CUP_B_M1128_MGS_Woodland", ["cost", 120], ["threat", 180]],
-    ["CUP_B_M1128_MGS_Desert", ["cost", 120], ["threat", 180]],
+    //
+    ["vn_o_wheeled_btr40_01_vcmf", ["rebCost", 800]],
+    ["vn_o_wheeled_btr40_mg_01_vcmf", ["rebCost", 1200]],
+    ["vn_o_wheeled_btr40_mg_02_vcmf", ["rebCost", 1400]],
+    ["vn_o_wheeled_btr40_mg_04_vcmf", ["rebCost", 1300]],
+    ["vn_o_wheeled_z157_mg_01_vcmf", ["rebCost", 600]],
 
-    // Trash planes
-    ["CUP_B_L39_CZ", ["cost", 150]],
-    ["CUP_O_L39_TK", ["cost", 150]],
+    ["vn_o_wheeled_btr40_mg_03_vcmf", ["rebCost", 1750]],
+    ["vn_o_wheeled_z157_mg_02_vcmf", ["rebCost", 1500]],
 
-    // Attack helis
-//    ["CUP_O_UH1H_armed_TKA", ["cost", 100]],         // few rockets plus door PKs
-//   ["CUP_I_AH6J_RACS", ["cost", 100]],              // few rockets plus fixed miniguns
-//    ["CUP_O_Ka50_SLA", ["cost", 250]],              // rockets & missiles but fixed cannon
-//    ["CUP_O_Ka50_RU", ["cost", 250]],
-//    ["CUP_O_Ka52_RU", ["cost", 250]],
-    ["CUP_B_AH64D_DL_USA", ["cost", 350]]           // better than the russian stuff
-//    ["CUP_B_AH1Z_Dynamic_USMC", ["cost", 300]]
+    ["vn_o_wheeled_btr40_mg_05_vcmf", ["rebCost", 1400]],
 
+    ["vn_o_vc_static_d44", ["rebCost", 1500]],
+    ["vn_i_static_m101_01", ["rebCost", 1500]],
+
+    ["vn_o_vc_static_zgu1_01", ["rebCost", 1200]],
+    ["vn_i_fank_70_static_zgu1_01", ["rebCost", 1200]],
+    ["vn_o_vc_static_dshkm_high_02", ["rebCost", 100]],
+    ["vn_o_vc_static_m1910_high_01", ["rebCost", 800]],
+    ["vn_o_vc_static_sgm_high_01", ["rebCost", 800]],
+
+    ["vn_b_wheeled_lr2a_mg_02_aus_army", ["rebCost", 1000]]
 ]] call _fnc_saveToTemplate;
+
+////PLEASE SOMEONE HELP ME ADD PROPER PRICES TO DLC VEHICLES
+
+if (isClass (configFile >> "CfgPatches" >> "RF_Vehicles")) then {
+    (["attributesVehicles"] call _fnc_getFromTemplate) append [
+        ["C_Heli_EC_01A_civ_RF", ["rebCost", 8000]],
+        ["C_Heli_EC_01_civ_RF", ["rebCost", 8000]],
+        ["C_Heli_EC_04_rescue_RF", ["rebCost", 8000]],
+        ["C_Pickup_rf", ["rebCost", 250]],
+        ["C_Pickup_covered_rf", ["rebCost", 250]]
+    ];
+};

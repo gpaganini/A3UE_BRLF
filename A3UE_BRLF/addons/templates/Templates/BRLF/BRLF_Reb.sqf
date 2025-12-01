@@ -4,34 +4,34 @@
 
 #include "..\..\script_component.hpp"
 
-["name", "BRLF"] call _fnc_saveToTemplate;
+["name", "BRLF Advanced"] call _fnc_saveToTemplate;
 
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\BRLF\flag_brlf.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "marker_brlf"] call _fnc_saveToTemplate;
 
 ////    Rebel Vehicles
-//  Ground
-private _vehiclesBasic = ["I_G_Quadbike_01_F"];
-private _vehiclesLightUnarmed = ["BRAF_AM11_Unarmed", "I_G_Offroad_01_F", "I_C_Offroad_02_unarmed_F"];
-private _vehiclesLightArmed = ["BRAF_AM11_Armed","I_C_Offroad_02_LMG_F", "I_G_Offroad_01_armed_F"];
-private _vehTruck = ["BRAF_AM21_Covered","I_C_Van_01_transport_F"];
-private _vehiclesAt = ["CUP_I_Hilux_metis_IND_G_F","I_G_Offroad_01_AT_F", "I_C_Offroad_02_AT_F"];
+//      Ground
+private _vehiclesBasic = ["BRAF_AM11_Unarmed","I_Quadbike_01_F"];
+private _vehiclesLightUnarmed = ["BRAF_LMV_EB","BRAF_AM21_GLO","BRAF_AM21_Opened","I_G_Offroad_01_F","I_C_Offroad_02_unarmed_F"];
+private _vehiclesLightArmed = ["BRAF_LMV_EB_RCWS","BRAF_AM11_Armed","I_C_Offroad_02_LMG_F","I_G_Offroad_01_armed_F"];
+private _vehTruck = ["BRAF_AM21_Covered","I_C_Van_01_transport_F","BRAF_Worker_Covered","BRAF_Worker_Cargo","BRAF_AM21_Cargo","I_G_Van_02_transport_F","I_G_Van_02_vehicle_F"];
+private _vehiclesAt = ["CUP_I_Hilux_metis_IND_G_F","I_G_Offroad_01_AT_F","I_C_Offroad_02_AT_F"];
 private _vehicleAA = ["CUP_I_Hilux_igla_IND_G_F"];
-//  Water
-private _vehiclesBoat = ["braf_voadeira_01","braf_voadeira_02","I_C_Boat_Transport_02_F" , "I_SDV_01_F" , "I_Boat_Armed_01_minigun_F" , "O_Boat_Armed_01_hmg_F"];
-//  Air
+//      Water
+private _vehiclesBoat = ["braf_voadeira_01","braf_voadeira_02","I_C_Boat_Transport_02_F" ,"I_SDV_01_F" ,"I_Boat_Armed_01_minigun_F","O_Boat_Armed_01_hmg_F"];
+//      Air
 private _vehiclesPlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
-private _vehiclesMedical = ["C_Van_02_medevac_F"];
+private _vehiclesMedical = ["C_Van_02_medevac_F","BRAF_Worker_Health","I_E_Van_02_medevac_F"];
 private _vehiclesSupply = ["C_Van_01_box_F"];
 ////    Civilian Vehicles
-private _vehiclesCivCar = ["C_Offroad_01_F", "C_Hatchback_01_F", "C_Hatchback_01_sport_F", "C_Offroad_02_unarmed_F", "C_SUV_01_F"];
+private _vehiclesCivCar = ["C_Offroad_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_02_unarmed_F","C_SUV_01_F"];
 private _vehicleCivPlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
-private _civTruck = ["C_Truck_02_transport_F", "C_Van_01_transport_F", "C_Van_02_transport_F", "C_Van_02_vehicle_F"];
-private _civHelicopters = ["C_Heli_Light_01_civil_F", "a3a_C_Heli_Transport_02_F"];
-private _civBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
+private _civTruck = ["C_Truck_02_transport_F","C_Van_01_transport_F","C_Van_02_transport_F","C_Van_02_vehicle_F"];
+private _civHelicopters = ["C_Heli_Light_01_civil_F","a3a_C_Heli_Transport_02_F"];
+private _civBoat = ["C_Boat_Civil_01_F","C_Rubberboat"];
 ////    Static
-private _staticMG = ["I_G_HMG_02_high_F", "I_G_HMG_02_F"];
+private _staticMG = ["I_G_HMG_02_high_F","I_G_HMG_02_F"];
 private _staticAT = ["I_static_AT_F"];
 private _staticAA = ["I_static_AA_F"];
 private _staticMortars = ["I_G_Mortar_01_F"];
@@ -70,30 +70,17 @@ private _staticMortars = ["I_G_Mortar_01_F"];
 //  Rebel Starting Gear  //
 ///////////////////////////
 
-/*
 private _initialRebelEquipment = [
-    "CUP_arifle_FNFAL_OSW_railed","CUP_arifle_FNFAL5061_wooden", "CUP_arifle_XM16E1", "CUP_srifle_M14",
-    "CUP_20Rnd_762x51_FNFAL_M","CUP_10Rnd_762x51_FNFAL_M", "CUP_20Rnd_556x45_Stanag", "10Rnd_Mk14_762x51_Mag",
-    "CUP_hgun_Glock17_blk", "CUP_hgun_M9", "CUP_17Rnd_9x19_glock17", "CUP_15Rnd_9x19_M9",
-    ["CUP_launch_M72A6", 50], ["CUP_launch_FIM92Stinger", 5],
-    ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
-    "CUP_HandGrenade_M67", "SmokeShell",
-    "CUP_V_RUS_Smersh_New_Radio", "CUP_V_O_SLA_Carrier_Belt02", "CUP_V_O_SLA_Carrier_Belt", "CUP_V_B_ALICE",
-    "CUP_V_RUS_Smersh_New_Light", "CUP_V_B_GER_Carrier_Rig_2_Brown", "CUP_V_B_GER_Carrier_Rig_3_Brown", "CUP_V_B_GER_Carrier_Rig",
-    "CUP_B_AlicePack_OD", "CUP_B_AlicePack_Khaki", "CUP_B_Bergen_BAF","CUP_B_CivPack_WDL","CUP_B_ACRPara_m95","CUP_B_ACRScout_m95",
-    "Binocular"
-];
-*/
-
-private _initialRebelEquipment = [
+    "CUP_arifle_FNFAL_OSW_railed","CUP_20Rnd_762x51_FNFAL_M","CUP_10Rnd_762x51_FNFAL_M",
     "CUP_smg_M3A1_blk","CUP_30Rnd_45ACP_M3A1_BLK_M",
+    "CUP_hgun_Glock17_blk","CUP_hgun_M9","CUP_17Rnd_9x19_glock17","CUP_15Rnd_9x19_M9",
     "braf_imbel_m973", "braf_9Rnd_9mm",
-    ["launch_RPG32_F", 2], ["RPG32_F", 6],
-    ["IEDUrbanSmall_Remote_Mag", 10], ["IEDLandSmall_Remote_Mag", 10], ["IEDUrbanBig_Remote_Mag", 3], ["IEDLandBig_Remote_Mag", 3],
+    ["launch_RPG32_F", 15], ["RPG32_F", 15],
+    ["IEDUrbanSmall_Remote_Mag", 15], ["IEDLandSmall_Remote_Mag", 15], ["IEDUrbanBig_Remote_Mag", 15], ["IEDLandBig_Remote_Mag", 15],
     "CUP_HandGrenade_RGD5", "MiniGrenade", "SmokeShell",
     "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk", "B_FieldPack_cbr", "B_AssaultPack_cbr","B_AssaultPack_rgr","B_AssaultPack_khk",
-    "V_TacChestrig_grn_F","V_TacChestrig_oli_F","V_TacChestrig_cbr_F", "CUP_V_I_Carrier_Belt", "CUP_V_I_RACS_Carrier_Rig_2", "CUP_V_I_RACS_Carrier_Rig_wdl_2",    
-    "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol",
+    "V_Chestrig_oli","V_Chestrig_rgr","V_TacChestrig_grn_F","V_TacChestrig_oli_F","V_TacChestrig_cbr_F","V_PlateCarrier1_rgr_noflag_F","CUP_V_I_Carrier_Belt", "CUP_V_I_RACS_Carrier_Rig_2", "CUP_V_I_RACS_Carrier_Rig_wdl_2",
+    "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","optic_Holosight_blk_F","optic_Aco",
     "Binocular"
 ];
 
@@ -120,9 +107,12 @@ private _rebUniforms = [
     "CUP_U_I_GUE_Anorak_03",
     "CUP_U_I_GUE_Anorak_02",
     "CUP_U_B_BDUv2_roll2_DPM_OD",
-    "U_I_C_Soldier_Camo_F",
     "U_IG_Guerilla2_2",
-    "U_IG_Guerilla2_3"
+    "U_IG_Guerilla2_3",
+    //"braf_army_jacket_lizard_uniform",
+    //"braf_army_jacket_gloves_lizard_uniform",
+    "braf_army_regular_rolled_uniform",
+    "braf_army_regular_rolled_uniform_gloves"
 ]; //Uniforms given to Player Rebels
 
 private _rebUniformsAI = [
@@ -133,21 +123,26 @@ private _rebUniformsAI = [
     "CUP_U_I_GUE_Anorak_03",
     "CUP_U_I_GUE_Anorak_02",
     "CUP_U_B_BDUv2_roll2_DPM_OD",
-    "U_I_C_Soldier_Camo_F",
     "U_IG_Guerilla2_2",
-    "U_IG_Guerilla2_3"
+    "U_IG_Guerilla2_3",
+    //"braf_army_jacket_lizard_uniform",
+    //"braf_army_jacket_gloves_lizard_uniform",
+    "braf_army_regular_rolled_uniform",
+    "braf_army_regular_rolled_uniform_gloves"
 ]; //Uniforms given to AI Rebels
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
+
+//"BrazilianMen" call _fnc_saveNames;
 
 ["headgear", [
     "H_Booniehat_khk_hs",
     "H_Booniehat_khk",
     "H_Booniehat_tan",
-    "H_Booniehat_oli",    
+    "H_Booniehat_oli",
     "H_Bandanna_gry",
     "H_Bandanna_blu",
-    "H_Bandanna_cbr",    
+    "H_Bandanna_cbr",
     "H_Bandanna_khk_hs",
     "H_Bandanna_khk",
     "H_Bandanna_sgg",
@@ -191,10 +186,14 @@ private _rebUniformsAI = [
 /////////////////////
 ///  Identities   ///
 /////////////////////
+private _faces = ["WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10","AfricanHead_01","AfricanHead_02","AfricanHead_03","GreekHead_A3_01","GreekHead_A3_02","GreekHead_A3_03","GreekHead_A3_04","GreekHead_A3_05","GreekHead_A3_06","GreekHead_A3_07","GreekHead_A3_08","GreekHead_A3_09"];
+private _voices = ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"];
+["voices", _voices] call _fnc_saveToTemplate;
+["faces", _faces] call _fnc_saveToTemplate;
 
-["faces", ["AfricanHead_01","AfricanHead_02","AfricanHead_03","WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10","WhiteHead_11","WhiteHead_12","WhiteHead_13","WhiteHead_14","WhiteHead_15","WhiteHead_16","WhiteHead_17","WhiteHead_19","WhiteHead_20","WhiteHead_21"]] call _fnc_saveToTemplate;
-["voices", ["Male01ENG","Male02ENG","Male03ENG","Male01ENGB","Male02ENGB","Male03ENGB"]] call _fnc_saveToTemplate;
-"EnglishMen" call _fnc_saveNames;
+//["faces", ["AfricanHead_01","AfricanHead_02","AfricanHead_03","WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10","WhiteHead_11","WhiteHead_12","WhiteHead_13","WhiteHead_14","WhiteHead_15","WhiteHead_16","WhiteHead_17","WhiteHead_19","WhiteHead_20","WhiteHead_21"]] call _fnc_saveToTemplate;
+//["voices", ["Male01ENG","Male02ENG","Male03ENG","Male01ENGB","Male02ENGB","Male03ENGB"]] call _fnc_saveToTemplate;
+//"EnglishMen" call _fnc_saveNames;
 
 //////////////////////////
 //       Loadouts       //
