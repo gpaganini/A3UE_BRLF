@@ -133,8 +133,6 @@ private _rebUniformsAI = [
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
 
-//"BrazilianMen" call _fnc_saveNames;
-
 ["headgear", [
     "H_Booniehat_khk_hs",
     "H_Booniehat_khk",
@@ -187,12 +185,9 @@ private _rebUniformsAI = [
 ///  Identities   ///
 /////////////////////
 private _faces = ["WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10","AfricanHead_01","AfricanHead_02","AfricanHead_03","GreekHead_A3_01","GreekHead_A3_02","GreekHead_A3_03","GreekHead_A3_04","GreekHead_A3_05","GreekHead_A3_06","GreekHead_A3_07","GreekHead_A3_08","GreekHead_A3_09"];
-private _voices = ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"];
+private _voices = ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG","Male01ENGB","Male02ENGB","Male03ENGB"];
 ["faces", _faces] call _fnc_saveToTemplate;
 ["voices", _voices] call _fnc_saveToTemplate;
-
-//["faces", ["AfricanHead_01","AfricanHead_02","AfricanHead_03","WhiteHead_01","WhiteHead_02","WhiteHead_03","WhiteHead_04","WhiteHead_05","WhiteHead_06","WhiteHead_07","WhiteHead_08","WhiteHead_09","WhiteHead_10","WhiteHead_11","WhiteHead_12","WhiteHead_13","WhiteHead_14","WhiteHead_15","WhiteHead_16","WhiteHead_17","WhiteHead_19","WhiteHead_20","WhiteHead_21"]] call _fnc_saveToTemplate;
-//["voices", ["Male01ENG","Male02ENG","Male03ENG","Male01ENGB","Male02ENGB","Male03ENGB"]] call _fnc_saveToTemplate;
 "EnglishMen" call _fnc_saveNames;
 
 //////////////////////////
@@ -230,7 +225,6 @@ _loadoutData set ["items_miscEssentials", [] call A3A_fnc_itemset_miscEssentials
 private _squadLeaderTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["facewear"] call _fnc_setFacewear;
-
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
@@ -240,7 +234,6 @@ private _squadLeaderTemplate = {
 private _riflemanTemplate = {
     ["uniforms"] call _fnc_setUniform;
     ["facewear"] call _fnc_setFacewear;
-
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
