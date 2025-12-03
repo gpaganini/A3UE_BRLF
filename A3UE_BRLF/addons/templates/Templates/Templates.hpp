@@ -12,14 +12,4 @@ class Templates
         file = "BRLF_Reb";
         description = "";
     };
-
-    class Syndikat_New : Vanilla_Base
-    {
-        basepath = QPATHTOFOLDER(Templates\Vanilla);
-        flagTexture = QPATHTOFOLDER(Templates\Vanilla\flag_aaf_torn_co.paa);
-        side = "Reb";
-        name = "Syndikat New";
-        file = "Vanilla_Reb_SDK";
-        description = "";
-    };
 };
