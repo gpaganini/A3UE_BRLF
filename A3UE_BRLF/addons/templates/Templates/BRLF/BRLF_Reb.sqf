@@ -12,11 +12,11 @@
 
 ////    Rebel Vehicles
 //      Ground
-private _vehiclesBasic = ["BRAF_AM11_Unarmed","I_Quadbike_01_F"];
-private _vehiclesLightUnarmed = ["BRAF_LMV_EB","BRAF_AM21_GLO","BRAF_AM21_Opened","I_G_Offroad_01_F","I_C_Offroad_02_unarmed_F"];
+private _vehiclesBasic = ["BRAF_AM11_Unarmed"];
+private _vehiclesLightUnarmed = ["BRAF_LMV_EB","BRAF_AM21_GLO","BRAF_AM21_Opened","I_G_Offroad_01_F"];
 private _vehiclesLightArmed = ["BRAF_LMV_EB_RCWS","BRAF_AM11_Armed","I_C_Offroad_02_LMG_F","I_G_Offroad_01_armed_F"];
 private _vehTruck = ["BRAF_AM21_Covered","I_C_Van_01_transport_F","BRAF_Worker_Covered","BRAF_Worker_Cargo","BRAF_AM21_Cargo","I_G_Van_02_transport_F","I_G_Van_02_vehicle_F"];
-private _vehiclesAt = ["CUP_I_Hilux_metis_IND_G_F","I_G_Offroad_01_AT_F","I_C_Offroad_02_AT_F"];
+private _vehiclesAt = ["I_G_Offroad_01_AT_F","I_C_Offroad_02_AT_F"];
 private _vehicleAA = ["CUP_I_Hilux_igla_IND_G_F"];
 //      Water
 private _vehiclesBoat = ["braf_voadeira_01","braf_voadeira_02","I_C_Boat_Transport_02_F" ,"I_SDV_01_F" ,"I_Boat_Armed_01_minigun_F","O_Boat_Armed_01_hmg_F"];
@@ -71,17 +71,17 @@ private _staticMortars = ["I_G_Mortar_01_F"];
 ///////////////////////////
 
 private _initialRebelEquipment = [
-    "CUP_arifle_FNFAL_OSW_railed","CUP_20Rnd_762x51_FNFAL_M","CUP_10Rnd_762x51_FNFAL_M",
-    "CUP_smg_M3A1_blk","CUP_30Rnd_45ACP_M3A1_BLK_M",
-    "CUP_hgun_Glock17_blk","CUP_hgun_M9","CUP_17Rnd_9x19_glock17","CUP_15Rnd_9x19_M9",
-    "braf_imbel_m973", "braf_9Rnd_9mm",
-    ["launch_RPG32_F", 15], ["RPG32_F", 15],
-    ["IEDUrbanSmall_Remote_Mag", 15], ["IEDLandSmall_Remote_Mag", 15], ["IEDUrbanBig_Remote_Mag", 15], ["IEDLandBig_Remote_Mag", 15],
-    "CUP_HandGrenade_RGD5", "MiniGrenade", "SmokeShell",
-    "B_FieldPack_oli","B_FieldPack_blk","B_FieldPack_khk", "B_FieldPack_cbr", "B_AssaultPack_cbr","B_AssaultPack_rgr","B_AssaultPack_khk",
-    "V_Chestrig_oli","V_Chestrig_rgr","V_TacChestrig_grn_F","V_TacChestrig_oli_F","V_TacChestrig_cbr_F","V_PlateCarrier1_rgr_noflag_F","CUP_V_I_Carrier_Belt", "CUP_V_I_RACS_Carrier_Rig_2", "CUP_V_I_RACS_Carrier_Rig_wdl_2",
+    "braf_sig_551","braf_sig_556x45","braf_hk33a3","braf_30Rnd_556x45_HK",
+    "CUP_arifle_FNFAL_OSW_railed","CUP_arifle_FNFAL_railed_woodland","CUP_20Rnd_762x51_FNFAL_M","CUP_10Rnd_762x51_FNFAL_M",
+    "CUP_hgun_Glock17_blk","CUP_hgun_M9","CUP_17Rnd_9x19_glock17","CUP_15Rnd_9x19_M9","braf_imbel_m973","braf_9Rnd_9mm",
+    ["launch_RPG32_F",15], ["RPG32_F",15],["braf_launch_alac",15]
+    ["IEDUrbanSmall_Remote_Mag",15],["IEDLandSmall_Remote_Mag",15],["IEDUrbanBig_Remote_Mag",15],["IEDLandBig_Remote_Mag",15],
+    "CUP_HandGrenade_RGD5","MiniGrenade","SmokeShell",
+    "braf_modular_assault_black","braf_modular_assault_olive","braf_alice_medium_olive","B_AssaultPack_cbr","B_AssaultPack_rgr","B_AssaultPack_khk",
+    "braf_iba_lizard","braf_iba_lizard_rifleman","braf_iba_lizard_squadleader","braf_vest_wtc_m7_rifleman_belt_556_black","braf_vest_wtc_m7_rifleman_belt_556_olive","braf_vest_wtc_m7_rifleman_belt_762_black","braf_vest_wtc_m7_rifleman_belt_762_olive","braf_vest_wtc_m7_squad_leader_556_black","braf_vest_wtc_m7_squad_leader_556_olive","braf_vest_wtc_m7_squad_leader_762_black","braf_vest_wtc_m7_squad_leader_762_olive",
     "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","optic_Holosight_blk_F","optic_Aco",
-    "Binocular"
+    "braf_eb_ccb_cover_nvg","braf_eb_opscore_comtac_black","braf_eb_opscore_comtac_olive",
+    "Binocular","itemRadio"
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr", "tf_anprc154"]};
@@ -100,35 +100,37 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
-    "CUP_U_O_Partisan_TTsKO_Mixed",
-    "CUP_U_O_Partisan_TTsKO",
-    "CUP_U_B_BDUv2_roll2_gloves_OD",
-    "CUP_U_I_GUE_Anorak_01",
-    "CUP_U_I_GUE_Anorak_03",
-    "CUP_U_I_GUE_Anorak_02",
-    "CUP_U_B_BDUv2_roll2_DPM_OD",
-    "U_IG_Guerilla2_2",
-    "U_IG_Guerilla2_3",
-    //"braf_army_jacket_lizard_uniform",
-    //"braf_army_jacket_gloves_lizard_uniform",
-    "braf_army_regular_rolled_uniform",
-    "braf_army_regular_rolled_uniform_gloves"
+    "braf_uniform_marine",
+    "braf_army_combat_shirt_cfn_uniform",
+    "braf_army_combat_shirt_cfn_uniform_gloves",
+    "braf_army_acu_regular_uniform",
+    "braf_army_acu_rolled_regular_uniform",
+    "braf_army_acu_rolled_regular_uniform_gloves",
+    "braf_army_combat_shirt_regular_uniform",
+    "braf_army_combat_shirt_regular_uniform_gloves",
+    "braf_army_combat_shirt_jungle_uniform",
+    "braf_army_combat_shirt_jungle_uniform_gloves",
+    "braf_army_combat_shirt_black_uniform",
+    "braf_army_combat_shirt_black_uniform_gloves",
+    "braf_army_combat_shirt_camo_uniform",
+    "braf_army_combat_shirt_camo_uniform_gloves"
 ]; //Uniforms given to Player Rebels
 
 private _rebUniformsAI = [
-    "CUP_U_O_Partisan_TTsKO_Mixed",
-    "CUP_U_O_Partisan_TTsKO",
-    "CUP_U_B_BDUv2_roll2_gloves_OD",
-    "CUP_U_I_GUE_Anorak_01",
-    "CUP_U_I_GUE_Anorak_03",
-    "CUP_U_I_GUE_Anorak_02",
-    "CUP_U_B_BDUv2_roll2_DPM_OD",
-    "U_IG_Guerilla2_2",
-    "U_IG_Guerilla2_3",
-    //"braf_army_jacket_lizard_uniform",
-    //"braf_army_jacket_gloves_lizard_uniform",
-    "braf_army_regular_rolled_uniform",
-    "braf_army_regular_rolled_uniform_gloves"
+    "braf_uniform_marine",
+    "braf_army_combat_shirt_cfn_uniform",
+    "braf_army_combat_shirt_cfn_uniform_gloves",
+    "braf_army_acu_regular_uniform",
+    "braf_army_acu_rolled_regular_uniform",
+    "braf_army_acu_rolled_regular_uniform_gloves",
+    "braf_army_combat_shirt_regular_uniform",
+    "braf_army_combat_shirt_regular_uniform_gloves",
+    "braf_army_combat_shirt_jungle_uniform",
+    "braf_army_combat_shirt_jungle_uniform_gloves",
+    "braf_army_combat_shirt_black_uniform",
+    "braf_army_combat_shirt_black_uniform_gloves",
+    "braf_army_combat_shirt_camo_uniform",
+    "braf_army_combat_shirt_camo_uniform_gloves"
 ]; //Uniforms given to AI Rebels
 
 ["uniforms", _rebUniforms] call _fnc_saveToTemplate;         //These Items get added to the Arsenal
