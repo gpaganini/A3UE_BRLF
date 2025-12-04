@@ -15,13 +15,13 @@
 private _vehiclesBasic = ["BRAF_AM11_Unarmed"];
 private _vehiclesLightUnarmed = ["BRAF_LMV_EB","BRAF_AM21_GLO","BRAF_AM21_Opened","I_G_Offroad_01_F"];
 private _vehiclesLightArmed = ["BRAF_LMV_EB_RCWS","BRAF_AM11_Armed","I_C_Offroad_02_LMG_F","I_G_Offroad_01_armed_F"];
-private _vehTruck = ["BRAF_AM21_Covered","I_C_Van_01_transport_F","BRAF_Worker_Covered","BRAF_Worker_Cargo","BRAF_AM21_Cargo","I_G_Van_02_transport_F","I_G_Van_02_vehicle_F"];
+private _vehTruck = ["BRAF_AM21_Covered","BRAF_Worker_Covered","BRAF_Worker_Cargo","BRAF_AM21_Cargo","I_G_Van_02_transport_F","I_G_Van_02_vehicle_F"];
 private _vehiclesAt = ["I_G_Offroad_01_AT_F","I_C_Offroad_02_AT_F"];
 private _vehicleAA = ["CUP_I_Hilux_igla_IND_G_F"];
 //      Water
 private _vehiclesBoat = ["braf_voadeira_01","braf_voadeira_02","I_C_Boat_Transport_02_F" ,"I_SDV_01_F" ,"I_Boat_Armed_01_minigun_F","O_Boat_Armed_01_hmg_F"];
 //      Air
-private _vehiclesPlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
+private _vehiclesPlane = ["braf_A29A","braf_A29B_Jambock"];
 private _vehiclesMedical = ["C_Van_02_medevac_F","BRAF_Worker_Health","I_E_Van_02_medevac_F"];
 private _vehiclesSupply = ["C_Van_01_box_F"];
 ////    Civilian Vehicles
@@ -34,7 +34,7 @@ private _civBoat = ["C_Boat_Civil_01_F","C_Rubberboat"];
 private _staticMG = ["I_G_HMG_02_high_F","I_G_HMG_02_F"];
 private _staticAT = ["I_static_AT_F"];
 private _staticAA = ["I_static_AA_F"];
-private _staticMortars = ["I_G_Mortar_01_F"];
+private _staticMortars = ["I_G_Mortar_01_F","braf_I_M252_AAF"];
 ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 
@@ -74,11 +74,14 @@ private _initialRebelEquipment = [
     "braf_sig_551","braf_sig_556x45","braf_hk33a3","braf_30Rnd_556x45_HK",
     "CUP_arifle_FNFAL_OSW_railed","CUP_arifle_FNFAL_railed_woodland","CUP_20Rnd_762x51_FNFAL_M","CUP_10Rnd_762x51_FNFAL_M",
     "CUP_hgun_Glock17_blk","CUP_hgun_M9","CUP_17Rnd_9x19_glock17","CUP_15Rnd_9x19_M9","braf_imbel_m973","braf_9Rnd_9mm",
-    ["launch_RPG32_F",15], ["RPG32_F",15],["braf_launch_alac",15]
-    ["IEDUrbanSmall_Remote_Mag",15],["IEDLandSmall_Remote_Mag",15],["IEDUrbanBig_Remote_Mag",15],["IEDLandBig_Remote_Mag",15],
+    ["launch_RPG32_F", 15], ["RPG32_F", 15], ["braf_launch_alac", 15],
+    ["IEDUrbanSmall_Remote_Mag", 15], ["IEDLandSmall_Remote_Mag", 15], ["IEDUrbanBig_Remote_Mag", 15], ["IEDLandBig_Remote_Mag", 15],
     "CUP_HandGrenade_RGD5","MiniGrenade","SmokeShell",
     "braf_modular_assault_black","braf_modular_assault_olive","braf_alice_medium_olive","B_AssaultPack_cbr","B_AssaultPack_rgr","B_AssaultPack_khk",
-    "braf_iba_lizard","braf_iba_lizard_rifleman","braf_iba_lizard_squadleader","braf_vest_wtc_m7_rifleman_belt_556_black","braf_vest_wtc_m7_rifleman_belt_556_olive","braf_vest_wtc_m7_rifleman_belt_762_black","braf_vest_wtc_m7_rifleman_belt_762_olive","braf_vest_wtc_m7_squad_leader_556_black","braf_vest_wtc_m7_squad_leader_556_olive","braf_vest_wtc_m7_squad_leader_762_black","braf_vest_wtc_m7_squad_leader_762_olive",
+    "braf_iba_lizard","braf_iba_lizard_rifleman","braf_iba_lizard_squadleader","braf_vest_wtc_m7_rifleman_belt_556_black",
+    "braf_vest_wtc_m7_rifleman_belt_556_olive","braf_vest_wtc_m7_rifleman_belt_762_black","braf_vest_wtc_m7_rifleman_belt_762_olive",
+    "braf_vest_wtc_m7_squad_leader_556_black","braf_vest_wtc_m7_squad_leader_556_olive","braf_vest_wtc_m7_squad_leader_762_black",
+    "braf_vest_wtc_m7_squad_leader_762_olive",
     "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","optic_Holosight_blk_F","optic_Aco",
     "braf_eb_ccb_cover_nvg","braf_eb_opscore_comtac_black","braf_eb_opscore_comtac_olive",
     "Binocular","itemRadio"
