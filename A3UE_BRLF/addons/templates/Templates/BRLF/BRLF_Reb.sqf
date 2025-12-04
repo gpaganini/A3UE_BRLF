@@ -22,7 +22,6 @@ private _hasEF = "ef" in A3A_enabledDLC;
 ///////////////////////////
 
 ["name", "BRLF"] call _fnc_saveToTemplate;
-
 ["flag", "Flag_NATO_F"] call _fnc_saveToTemplate;
 ["flagTexture", QPATHTOFOLDER(Templates\BRLF\flag_brlf.paa)] call _fnc_saveToTemplate;
 ["flagMarkerType", "marker_brlf"] call _fnc_saveToTemplate;
@@ -33,32 +32,23 @@ private _vehiclesLightArmed = ["BRAF_LMV_EB_RCWS","BRAF_AM11_Armed","I_C_Offroad
 private _VehTruck = ["BRAF_AM21_Covered","BRAF_Worker_Covered","BRAF_Worker_Cargo","BRAF_AM21_Cargo","I_G_Van_02_transport_F","I_G_Van_02_vehicle_F"];
 private _vehiclesAt = ["I_G_Offroad_01_AT_F", "I_C_Offroad_02_AT_F"];
 private _vehicleAA = ["CUP_I_Hilux_igla_IND_G_F"];
-
 private _vehiclesBoat = ["braf_voadeira_01","braf_voadeira_02","I_C_Boat_Transport_02_F" ,"I_SDV_01_F" ,"I_Boat_Armed_01_minigun_F","O_Boat_Armed_01_hmg_F"];
-
 private _vehiclePlane = ["braf_A29A","braf_A29B_Jambock"];
-
 private _vehiclesMedical = ["C_Van_02_medevac_F","BRAF_Worker_Health","I_E_Van_02_medevac_F"];
-
 private _vehiclesSupply = ["C_Van_01_box_F"];
-
 private _vehicleCivPlane = ["C_Plane_Civil_01_F","C_Plane_Civil_01_racing_F"];
-
 private _vehiclesCivCar = ["C_Offroad_01_F","C_Hatchback_01_F","C_Hatchback_01_sport_F","C_Offroad_02_unarmed_F","C_SUV_01_F"];
 private _CivTruck = ["C_Truck_02_transport_F","C_Van_01_transport_F","C_Van_02_transport_F","C_Van_02_vehicle_F"];
 private _civHelicopters = ["C_Heli_Light_01_civil_F","a3a_C_Heli_Transport_02_F"];
 private _CivBoat = ["C_Boat_Civil_01_F","C_Rubberboat"];
-
 private _staticMG = ["I_G_HMG_02_high_F", "I_G_HMG_02_F"];
 private _staticAT = ["I_static_AT_F"];
 private _staticAA = ["I_static_AA_F"];
 private _staticMortars = ["I_G_Mortar_01_F", "braf_I_M252_AAF"];
 ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
-
 ["minesAT", ["ATMine_Range_Mag", "SLAMDirectionalMine_Wire_Mag"]] call _fnc_saveToTemplate;
 ["minesAPERS", ["ClaymoreDirectionalMine_Remote_Mag","APERSMine_Range_Mag", "APERSBoundingMine_Range_Mag", "APERSTripMine_Wire_Mag"]] call _fnc_saveToTemplate;
-
 ["breachingExplosivesAPC", [["DemoCharge_Remote_Mag", 1]]] call _fnc_saveToTemplate;
 ["breachingExplosivesTank", [["SatchelCharge_Remote_Mag", 1], ["DemoCharge_Remote_Mag", 2]]] call _fnc_saveToTemplate;
 
