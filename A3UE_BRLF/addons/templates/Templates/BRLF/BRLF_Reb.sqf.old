@@ -71,10 +71,11 @@ private _staticMortars = ["I_G_Mortar_01_F","braf_I_M252_AAF"];
 ///////////////////////////
 
 private _initialRebelEquipment = [
-    "braf_sig_551","braf_sig_556x45","braf_hk33a3","braf_30Rnd_556x45_HK",
-    "CUP_arifle_FNFAL_OSW_railed","CUP_arifle_FNFAL_railed_woodland","CUP_20Rnd_762x51_FNFAL_M","CUP_10Rnd_762x51_FNFAL_M",
-    "CUP_hgun_Glock17_blk","CUP_hgun_M9","CUP_17Rnd_9x19_glock17","CUP_15Rnd_9x19_M9","braf_imbel_m973","braf_9Rnd_9mm",
-    ["launch_RPG32_F", 15], ["RPG32_F", 15], ["braf_launch_alac", 15],
+    "braf_sig_551", "braf_sig_556x45",
+    "braf_hk33a3", "braf_30Rnd_556x45_HK",
+    "CUP_arifle_FNFAL_OSW_railed", "CUP_arifle_FNFAL_railed_woodland", "CUP_20Rnd_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M",
+    "CUP_hgun_Glock17_blk", "CUP_hgun_M9", "CUP_17Rnd_9x19_glock17", "CUP_15Rnd_9x19_M9", "braf_imbel_m973", "braf_9Rnd_9mm",
+    ["launch_RPG32_F", 15], ["RPG32_F", 15],
     ["IEDUrbanSmall_Remote_Mag", 15], ["IEDLandSmall_Remote_Mag", 15], ["IEDUrbanBig_Remote_Mag", 15], ["IEDLandBig_Remote_Mag", 15],
     "CUP_HandGrenade_RGD5","MiniGrenade","SmokeShell",
     "braf_modular_assault_black","braf_modular_assault_olive","braf_alice_medium_olive","B_AssaultPack_cbr","B_AssaultPack_rgr","B_AssaultPack_khk",

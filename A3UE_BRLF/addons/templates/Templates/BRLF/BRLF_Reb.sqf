@@ -134,20 +134,21 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 ///////////////////////////
 
 private _initialRebelEquipment = [
-    "braf_sig_551","braf_sig_556x45","braf_hk33a3","braf_30Rnd_556x45_HK",
-    "CUP_arifle_FNFAL_OSW_railed","CUP_arifle_FNFAL_railed_woodland","CUP_20Rnd_762x51_FNFAL_M","CUP_10Rnd_762x51_FNFAL_M",
-    "CUP_hgun_Glock17_blk","CUP_hgun_M9","CUP_17Rnd_9x19_glock17","CUP_15Rnd_9x19_M9","braf_imbel_m973","braf_9Rnd_9mm",
-    ["launch_RPG32_F", 15], ["RPG32_F", 15], ["braf_launch_alac", 15],
+    "braf_sig_551", "braf_sig_556x45",
+    "braf_hk33a3", "braf_30Rnd_556x45_HK",
+    "CUP_arifle_FNFAL_OSW_railed", "CUP_arifle_FNFAL_railed_woodland", "CUP_20Rnd_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M",
+    "CUP_hgun_Glock17_blk", "CUP_hgun_M9", "CUP_17Rnd_9x19_glock17", "CUP_15Rnd_9x19_M9", "braf_imbel_m973", "braf_9Rnd_9mm",
+    ["launch_RPG32_F", 15], ["RPG32_F", 15],
     ["IEDUrbanSmall_Remote_Mag", 15], ["IEDLandSmall_Remote_Mag", 15], ["IEDUrbanBig_Remote_Mag", 15], ["IEDLandBig_Remote_Mag", 15],
-    "CUP_HandGrenade_RGD5","MiniGrenade","SmokeShell",
-    "braf_modular_assault_black","braf_modular_assault_olive","braf_alice_medium_olive","B_AssaultPack_cbr","B_AssaultPack_rgr","B_AssaultPack_khk",
-    "braf_iba_lizard","braf_iba_lizard_rifleman","braf_iba_lizard_squadleader","braf_vest_wtc_m7_rifleman_belt_556_black",
-    "braf_vest_wtc_m7_rifleman_belt_556_olive","braf_vest_wtc_m7_rifleman_belt_762_black","braf_vest_wtc_m7_rifleman_belt_762_olive",
-    "braf_vest_wtc_m7_squad_leader_556_black","braf_vest_wtc_m7_squad_leader_556_olive","braf_vest_wtc_m7_squad_leader_762_black",
+    "CUP_HandGrenade_RGD5", "MiniGrenade", "SmokeShell",
+    "braf_modular_assault_black", "braf_modular_assault_olive", "braf_alice_medium_olive", "B_AssaultPack_cbr", "B_AssaultPack_rgr", "B_AssaultPack_khk",
+    "braf_iba_lizard", "braf_iba_lizard_rifleman", "braf_iba_lizard_squadleader", "braf_vest_wtc_m7_rifleman_belt_556_black",
+    "braf_vest_wtc_m7_rifleman_belt_556_olive", "braf_vest_wtc_m7_rifleman_belt_762_black", "braf_vest_wtc_m7_rifleman_belt_762_olive",
+    "braf_vest_wtc_m7_squad_leader_556_black", "braf_vest_wtc_m7_squad_leader_556_olive", "braf_vest_wtc_m7_squad_leader_762_black",
     "braf_vest_wtc_m7_squad_leader_762_olive",
-    "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","optic_Holosight_blk_F","optic_Aco",
-    "braf_eb_ccb_cover_nvg","braf_eb_opscore_comtac_black","braf_eb_opscore_comtac_olive",
-    "Binocular","itemRadio"
+    "acc_flashlight", "acc_flashlight_smg_01", "acc_flashlight_pistol", "optic_Holosight_blk_F", "optic_Aco",
+    "braf_eb_ccb_cover_nvg", "braf_eb_opscore_comtac_black", "braf_eb_opscore_comtac_olive",
+    "Binocular", "itemRadio"
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
@@ -251,6 +252,7 @@ _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
+_loadoutData set ["radios", ["itemRadio"]];
 _loadoutData set ["uniforms", _rebUniforms + _dlcUniforms]; ///check this one
 
 _loadoutData set ["glasses", ["G_Lady_Blue","G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red", "G_Squares", "G_Squares_Tinted"]];
@@ -330,6 +332,7 @@ private _squadLeaderTemplate = {
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
     ["binoculars"] call _fnc_addBinoculars;
+    ["radios"] call _fnc_addRadio;
 };
 
 private _riflemanTemplate = {
@@ -342,6 +345,7 @@ private _riflemanTemplate = {
     ["maps"] call _fnc_addMap;
     ["watches"] call _fnc_addWatch;
     ["compasses"] call _fnc_addCompass;
+    ["radios"] call _fnc_addRadio;
 };
 
 private _prefix = "militia";
