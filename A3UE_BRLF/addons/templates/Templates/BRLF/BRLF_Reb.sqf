@@ -146,9 +146,9 @@ private _initialRebelEquipment = [
     "braf_vest_wtc_m7_rifleman_belt_556_olive", "braf_vest_wtc_m7_rifleman_belt_762_black", "braf_vest_wtc_m7_rifleman_belt_762_olive",
     "braf_vest_wtc_m7_squad_leader_556_black", "braf_vest_wtc_m7_squad_leader_556_olive", "braf_vest_wtc_m7_squad_leader_762_black",
     "braf_vest_wtc_m7_squad_leader_762_olive",
-    "acc_flashlight", "acc_flashlight_smg_01", "acc_flashlight_pistol", "optic_Holosight_blk_F", "optic_Aco",
+    "acc_flashlight", "acc_flashlight_smg_01", "acc_flashlight_pistol", "optic_Holosight_blk_F", "optic_Aco", "optic_Hamr",
     "braf_eb_ccb_cover_nvg", "braf_eb_opscore_comtac_black", "braf_eb_opscore_comtac_olive",
-    "Binocular", "itemRadio"
+    "Binocular", ["itemRadio", 15]
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
