@@ -27,24 +27,24 @@ private _hasEF = "ef" in A3A_enabledDLC;
 ["flagMarkerType", "marker_brlf"] call _fnc_saveToTemplate;
 
 private _vehiclesBasic = ["I_G_Quadbike_01_F"];
-private _vehiclesLightUnarmed = ["CUP_I_Hilux_unarmed_IND_G_F", "I_G_Offroad_01_F"];
-private _vehiclesLightArmed = ["CUP_I_Hilux_M2_IND_G_F", "I_C_Offroad_02_LMG_F", "I_G_Offroad_01_armed_F"];
-private _VehTruck = ["BRAF_Worker_Cargo","BRAF_AM21_Cargo"];
-private _vehiclesAt = ["I_G_Offroad_01_AT_F"];
-private _vehicleAA = ["CUP_I_Hilux_igla_IND_G_F"];
-private _vehiclesBoat = ["braf_voadeira_01", "I_C_Boat_Transport_02_F", "I_SDV_01_F", "I_Boat_Armed_01_minigun_F", "O_Boat_Armed_01_hmg_F"];
-private _vehiclePlane = ["braf_A29A", "braf_A29B_Jambock"];
+private _vehiclesLightUnarmed = ["CUP_I_Hilux_unarmed_IND_G_F", "I_G_Offroad_01_F", "CUP_B_nM1151_Unarmed_NATO", "CUP_I_SUV_UNO"];
+private _vehiclesLightArmed = ["CUP_I_Hilux_M2_IND_G_F", "I_C_Offroad_02_LMG_F", "I_G_Offroad_01_armed_F", "CUP_B_nM1025_M240_NATO", "CUP_B_nM1025_M2_NATO"];
+private _VehTruck = ["I_C_Van_01_transport_F","I_E_Truck_02_transport"];
+private _vehiclesAt = ["I_G_Offroad_01_AT_F","CUP_I_Hilux_metis_IND_G_F"];
+private _vehicleAA = ["CUP_I_Hilux_igla_IND_G_F","CUP_I_Hilux_zu23_IND_G_F"];
+private _vehiclesBoat = ["I_C_Boat_Transport_02_F", "I_SDV_01_F", "I_Boat_Armed_01_minigun_F", "O_Boat_Armed_01_hmg_F"];
+private _vehiclePlane = ["C_Plane_Civil_01_F", "C_Plane_Civil_01_racing_F"];
 private _vehiclesMedical = ["I_E_Van_02_medevac_F"];
 private _vehiclesSupply = ["C_Van_01_box_F"];
 private _vehicleCivPlane = ["C_Plane_Civil_01_F", "C_Plane_Civil_01_racing_F"];
-private _vehiclesCivCar = ["CUP_O_Hilux_unarmed_CR_CIV", "C_Offroad_01_F", "C_SUV_01_F", "BRAF_AM11_Black"];
-private _CivTruck = ["C_Truck_02_transport_F", "C_Van_01_transport_F", "BRAF_AM21_Black"];
+private _vehiclesCivCar = ["CUP_O_Hilux_unarmed_CR_CIV", "C_Offroad_01_F", "CUP_C_SUV_CIV"];
+private _CivTruck = ["C_Truck_02_transport_F", "C_Van_01_transport_F"];
 private _civHelicopters = ["C_Heli_Light_01_civil_F", "a3a_C_Heli_Transport_02_F", "BRAF_Pantera_K2_Silver"];
 private _CivBoat = ["C_Boat_Civil_01_F", "C_Rubberboat"];
 private _staticMG = ["I_G_HMG_02_high_F", "I_G_HMG_02_F"];
 private _staticAT = ["I_static_AT_F"];
 private _staticAA = ["I_static_AA_F"];
-private _staticMortars = ["I_G_Mortar_01_F", "braf_I_M252_AAF"];
+private _staticMortars = ["I_G_Mortar_01_F"];
 ["staticMortarMagHE", "8Rnd_82mm_Mo_shells"] call _fnc_saveToTemplate;
 ["staticMortarMagSmoke", "8Rnd_82mm_Mo_Smoke_white"] call _fnc_saveToTemplate;
 ["minesAT", ["ATMine_Range_Mag", "SLAMDirectionalMine_Wire_Mag"]] call _fnc_saveToTemplate;
@@ -134,16 +134,15 @@ if (isClass (configFile >> "cfgVehicles" >> "vnx_b_air_ac119_02_01")) then {
 ///////////////////////////
 
 private _initialRebelEquipment = [
-    "braf_sig_551", "braf_sig_556x45",
-    "CUP_arifle_FNFAL_OSW_railed", "CUP_arifle_FNFAL_railed_woodland", "CUP_20Rnd_762x51_FNFAL_M", "CUP_10Rnd_762x51_FNFAL_M",
-    "CUP_hgun_Glock17_blk", "CUP_hgun_M9", "CUP_17Rnd_9x19_glock17", "CUP_15Rnd_9x19_M9", "braf_PT92", "16Rnd_9x21_Mag",
-    ["launch_RPG32_F", 15], ["RPG32_F", 15],
-    ["IEDUrbanSmall_Remote_Mag", 15], ["IEDLandSmall_Remote_Mag", 15], ["IEDUrbanBig_Remote_Mag", 15], ["IEDLandBig_Remote_Mag", 15],
-    "CUP_HandGrenade_RGD5", "MiniGrenade", "SmokeShell",
-    "braf_modular_assault_black", "braf_alice_medium_olive", "B_AssaultPack_cbr", "B_AssaultPack_rgr", "B_AssaultPack_khk",
-    "V_Chestrig_rgr", "V_Chestrig_khk", "braf_iba_lizard_rifleman", "CUP_V_I_RACS_Carrier_Rig_2", "CUP_V_I_RACS_Carrier_Rig_wdl_2",
-    "acc_flashlight", "acc_flashlight_smg_01", "acc_flashlight_pistol", "optic_Holosight_blk_F", "optic_Aco", "optic_Hamr",
-    "Binocular", ["itemRadio", 15]
+  "CUP_hgun_Glock17_blk","CUP_hgun_M9","CUP_17Rnd_9x19_glock17","CUP_15Rnd_9x19_M9",
+  "CUP_arifle_HK416_Black","CUP_30Rnd_556x45_PMAG_BLACK_PULL",
+  ["launch_RPG32_F", 15], ["RPG32_F", 15],
+  ["IEDUrbanSmall_Remote_Mag", 15], ["IEDLandSmall_Remote_Mag", 15], ["IEDUrbanBig_Remote_Mag", 15], ["IEDLandBig_Remote_Mag", 15],
+  "CUP_HandGrenade_RGD5","MiniGrenade","SmokeShell",
+  "B_AssaultPack_cbr","B_AssaultPack_rgr","B_AssaultPack_khk",
+  "V_Chestrig_rgr","V_Chestrig_khk","CUP_V_CPC_Fastbelt_mc","CUP_V_CPC_Fast_mc","CUP_V_I_RACS_Carrier_Rig_2","CUP_V_I_RACS_Carrier_Rig_wdl_2",
+  "acc_flashlight","acc_flashlight_smg_01","acc_flashlight_pistol","optic_Holosight_blk_F","optic_Aco","optic_Hamr",
+  "Binocular"
 ];
 
 if (A3A_hasTFAR) then {_initialRebelEquipment append ["tf_microdagr","tf_anprc154"]};
@@ -156,53 +155,23 @@ _initialRebelEquipment append ["Chemlight_blue","Chemlight_green","Chemlight_red
 ["initialRebelEquipment", _initialRebelEquipment] call _fnc_saveToTemplate;
 
 private _rebUniforms = [
-  "CUP_U_B_CZ_WDL_Kneepads",
-  "CUP_U_B_CZ_Pilot_WDL",
-  "CUP_I_B_PMC_Unit_20",
-  "CUP_I_B_PMC_Unit_22",
-  "CUP_I_B_PMC_Unit_21",
-  "CUP_I_B_PMC_Unit_19",
-  "CUP_I_B_PMC_Unit_17",
   "CUP_I_B_PMC_Unit_13",
   "CUP_I_B_PMC_Unit_14",
-  "CUP_I_B_PMC_Unit_16",
   "CUP_I_B_PMC_Unit_15",
-  "CUP_I_B_PMC_Unit_12",
-  "CUP_I_B_PMC_Unit_3",
-  "CUP_I_B_PMC_Unit_2",
-  "CUP_I_B_PMC_Unit_1",
-  "CUP_I_B_PMC_Unit_4",
-  "CUP_I_B_PMC_Unit_7",
-  "CUP_I_B_PMC_Unit_6",
-  "CUP_I_B_PMC_Unit_5",
-  "CUP_I_B_PMC_Unit_8",
-  "CUP_I_B_PMC_Unit_11",
-  "CUP_I_B_PMC_Unit_10",
-  "CUP_I_B_PMC_Unit_36",
-  "CUP_I_B_PMC_Unit_37",
-  "CUP_I_B_PMC_Unit_38",
-  "CUP_I_B_PMC_Unit_39",
-  "CUP_I_B_PMC_Unit_40",
-  "CUP_I_B_PMC_Unit_41",
-  "CUP_I_B_PMC_Unit_42",
+  "CUP_I_B_PMC_Unit_16",
+  "CUP_I_B_PMC_Unit_35",
   "CUP_I_B_PMC_Unit_43",
-  "CUP_I_B_PMC_Unit_28",
-  "CUP_I_B_PMC_Unit_24",
-  "CUP_I_B_PMC_Unit_23",
-  "CUP_I_B_PMC_Unit_31",
-  "CUP_I_B_PMC_Unit_32",
-  "CUP_I_B_PMC_Unit_29",
-  "CUP_I_B_PMC_Unit_30",
-  "CUP_I_B_PMC_Unit_33",
-  "CUP_I_B_PMC_Unit_34",
-  "U_IG_Guerilla1_1",
-  "U_IG_Guerilla2_1",
-  "U_IG_Guerilla2_2",
-  "U_IG_Guerilla2_3",
-  "U_IG_Guerilla3_1",
-  "U_IG_leader",
-  "U_IG_Guerrilla_6_1",
-  "U_I_G_resistanceLeader_F"
+  "CUP_U_CRYE_ATACSFG_Full",
+  "CUP_U_CRYE_G3C_M81",
+  "CUP_U_CRYE_G3C_MC_V2",
+  "CUP_U_CRYE_G3C_MC_V3",
+  "CUP_U_CRYE_MCAM_NP2_Roll",
+  "U_BG_Guerilla1_1",
+  "U_BG_Guerilla2_1",
+  "U_BG_Guerilla2_3",
+  "U_BG_Guerilla3_1",
+  "U_BG_Guerrilla_6_1",
+  "U_I_L_Uniform_01_deserter_F"
 ];
 
 private _dlcUniforms = [];
@@ -210,6 +179,7 @@ private _dlcUniforms = [];
 ["uniforms", _rebUniforms + _dlcUniforms] call _fnc_saveToTemplate;
 
 private _headgear = [
+  "CUP_H_OpsCore_Covered_MCAM",
   "H_Booniehat_khk_hs",
   "H_Booniehat_khk",
   "H_Booniehat_tan",
@@ -280,7 +250,7 @@ _loadoutData set ["maps", ["ItemMap"]];
 _loadoutData set ["watches", ["ItemWatch"]];
 _loadoutData set ["compasses", ["ItemCompass"]];
 _loadoutData set ["binoculars", ["Binocular"]];
-_loadoutData set ["radios", ["itemRadio"]];
+//_loadoutData set ["radios", ["itemRadio"]];
 _loadoutData set ["uniforms", _rebUniforms + _dlcUniforms]; ///check this one
 
 _loadoutData set ["glasses", ["G_Lady_Blue","G_Shades_Black", "G_Shades_Blue", "G_Shades_Green", "G_Shades_Red", "G_Aviator", "G_Spectacles", "G_Spectacles_Tinted", "G_Sport_BlackWhite", "G_Sport_Blackyellow", "G_Sport_Greenblack", "G_Sport_Checkered", "G_Sport_Red", "G_Squares", "G_Squares_Tinted"]];
